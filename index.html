@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hop to it</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M22 26C18 14 18 4 24 4s6 12 6 20M40 24c0-8 0-20 6-20s4 12 0 22' fill='%23f3e8f0' stroke='%232a37b8' stroke-width='4' stroke-linecap='round'/%3E%3Cellipse cx='32' cy='40' rx='20' ry='17' fill='%23f3e8f0' stroke='%232a37b8' stroke-width='4'/%3E%3Ccircle cx='25' cy='40' r='2.5' fill='%232a37b8'/%3E%3Ccircle cx='39' cy='40' r='2.5' fill='%232a37b8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<script>
+try { const t = JSON.parse(localStorage.getItem("hoptrack.v1") || "{}").theme; if (["paper", "lilac", "coffee", "mono", "noir", "night", "glass"].includes(t)) document.documentElement.dataset.theme = t; } catch (e) {}
+if (/HopToItMac/.test(navigator.userAgent)) document.documentElement.classList.add("mac");
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/>
+    <feDisplacementMap in="SourceGraphic" scale="3.2"/>
+  </filter>
+  <filter id="liquid" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feImage id="lensMap" x="0" y="0" width="380" height="900" preserveAspectRatio="none" result="map" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='r' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23000'/%3E%3Cstop offset='1' stop-color='%23f00'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23000'/%3E%3Cstop offset='1' stop-color='%230f0'/%3E%3C/linearGradient%3E%3Cfilter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='5.5'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23r)'/%3E%3Crect width='100' height='100' fill='url(%23g)' style='mix-blend-mode:screen'/%3E%3Crect x='9' y='9' width='82' height='82' rx='16' fill='rgb(128,128,0)' filter='url(%23b)'/%3E%3C/svg%3E"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="-42" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="rough-soft">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="9"/>
+    <feDisplacementMap in="SourceGraphic" scale="1.8"/>
+  </filter>
+</svg>
+
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<main class="card sk" id="card">
+  <header class="top">
+    <svg class="bunny" id="bunny" viewBox="0 0 220 140" data-mood="idle" aria-hidden="true">
+      <g class="sparkles" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M40 40 v14 M33 47 h14"/>
+        <path d="M182 30 v12 M176 36 h12"/>
+        <path d="M172 82 v8 M168 86 h8"/>
+        <path class="heart" d="M48 86 c-6 -7 -14 0 -8 6 l8 7 l8 -7 c6 -6 -2 -13 -8 -6z" fill="currentColor" stroke="none"/>
+      </g>
+      <g class="zz" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M160 34 h10 l-10 10 h10"/>
+        <path d="M176 18 h7 l-7 7 h7"/>
+      </g>
+      <g class="bun" style="filter:url(#rough-soft)" fill="var(--solid)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <g class="body-bob">
+          <path class="ear ear-l" d="M93 56 C85 34 81 12 89 8 C98 4 103 30 102 53"/>
+          <path class="ear ear-r" d="M118 53 C118 30 125 5 134 8 C143 12 138 34 128 56"/>
+          <path d="M110 47 C140 47 153 66 151 85 C149 103 133 112 110 112 C87 112 71 103 69 85 C67 66 80 47 110 47Z"/>
+          <ellipse cx="86" cy="93" rx="6" ry="3.4" fill="var(--blush)" stroke="none"/>
+          <ellipse cx="134" cy="93" rx="6" ry="3.4" fill="var(--blush)" stroke="none"/>
+          <g class="eyes eyes-open" fill="currentColor" stroke="none">
+            <circle cx="98" cy="82" r="3"/><circle cx="122" cy="82" r="3"/>
+          </g>
+          <path class="eyes eyes-focus" d="M92 79 l10 3 M128 79 l-10 3" fill="none"/>
+          <path class="eyes eyes-happy" d="M92 85 q5 -7 10 0 M118 85 q5 -7 10 0" fill="none"/>
+          <path class="eyes eyes-sleep" d="M92 83 q5 4 10 0 M118 83 q5 4 10 0" fill="none"/>
+          <path d="M104.5 92 q2.75 3.4 5.5 0 q2.75 3.4 5.5 0" fill="none" stroke-width="2.4"/>
+        </g>
+        <g class="book">
+          <path d="M72 124 L75 104 Q92 98 110 106 Q128 98 145 104 L148 124 Q129 118 110 125 Q91 118 72 124Z"/>
+          <path d="M110 106 L110 125" fill="none"/>
+          <path class="page" d="M110 106 Q122 100 136 104 L138 120 Q124 116 110 122Z"/>
+          <path d="M84 112 h14 M84 117 h12 M122 112 h14 M122 117 h12" fill="none" stroke-width="1.6" opacity=".55"/>
+        </g>
+        <ellipse cx="90" cy="105" rx="9" ry="6"/>
+        <ellipse cx="130" cy="105" rx="9" ry="6"/>
+        <path d="M18 125 L202 125" fill="none"/>
+      </g>
+    </svg>
+    <div id="mascot" class="mascot" role="img" aria-label="bunny" hidden></div>
+
+    <div class="display">
+      <div class="big" id="big">0%</div>
+      <div class="sub"><span id="subLabel">today</span><span class="dots" id="dots"></span></div>
+    </div>
+    <div class="pomo-ctl" id="pomoCtl" hidden></div>
+    <div class="mini-next" id="miniNext"></div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button data-tab="today" class="on">today</button>
+    <button data-tab="stats">progress</button>
+    <button data-tab="me">me</button>
+    <button data-tab="edit">customize</button>
+  </nav>
+
+  <section class="view" id="view"></section>
+
+  <footer class="bar">
+    <div class="bar-l">
+      <button class="ib" id="themeBtn" title="change theme" aria-label="change theme">
+        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.6-1-2.6 1-1.9 2.2-1.9H17a4 4 0 0 0 4-4c0-4.2-4-7.5-9-7.5Z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.5" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></svg>
+      </button>
+      <button class="ib" id="miniBtn" title="mini mode" aria-label="toggle mini mode">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M8 14h8"/></svg>
+      </button>
+      <button class="ib" id="soundBtn" title="sound on or off" aria-label="toggle sound">
+        <svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="wave" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="mute" d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+      </button>
+      <button class="ib" id="popBtn" title="pop out as a floating widget" aria-label="pop out widget">
+        <svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>
+      </button>
+    </div>
+    <span class="theme-name" id="themeName">paper</span>
+  </footer>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
